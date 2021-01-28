@@ -124,9 +124,10 @@
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
 
-
-
-
+const nuestroTitulo = document.querySelector('h1')
+console.log(nuestroTitulo)
+console.log(nuestroTitulo.innerText)
+nuestroTitulo.innerText = 'Hola, r/Argentina-Programa'
 
 
 /*
@@ -146,15 +147,15 @@
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
-
-
+const mediaLinks = document.querySelectorAll('li')
+console.log(mediaLinks)
 
 
 
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
 
-
+console.log(mediaLinks.length)
 
 
 
@@ -162,7 +163,10 @@
 // TAREA: ¿Te acordás de los bucles del nivel 2? Usando lo que sabés de ellos, realizá iteraciones
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 
-
+for(let i = 0; i < mediaLinks.length; i++) {
+    console.log(mediaLinks[i])
+    console.log(mediaLinks[i].innerText)  //que cosoleguee el texto que tiene
+}
 
 
 
@@ -184,9 +188,9 @@
 // TAREA: Obtené el contenido de nuestro elemento 'h1'
 // y utilizá console.log para mostrarlo.
 
-
-
-
+console.log(nuestroTitulo.textContent) //textContent os va a dar el contenido de txt que este dentro del elemento
+console.log(nuestroTitulo.innerText)  //innertext no te da ningún tipo de texto que no esté rendereado en la pag
+//solo nos pasa lo que sea visible en la página
 
 
 /*
@@ -205,8 +209,10 @@
 
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
+nuestroTitulo.textContent = 'Chau'
 
-
+// const nombreUsuario = prompt('¿Cómo te llamas')
+// nuestroTitulo.textContent = `Hola ${nombreUsuario}`
 
 
 /*
@@ -224,7 +230,8 @@
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
 
-
+document.querySelector('img').src = 'img/kittens.jpeg'
+//seleccionamos el doc con la etiqueta img agarramos src y a eso le asignamos la nueva imagen
 
 
 
@@ -249,7 +256,7 @@
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
 
-
+nuestroTitulo.style.backgroundColor = 'blue'
 
 
 
@@ -278,8 +285,12 @@
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
-
-
+ 
+const nodoImagen = document.createElement('img') //este solo crea el tag de img pero no el src para meter ka imagen
+nodoImagen.src = 'img/woman_bw.jpg'  //le cambiamos el src a img
+document.querySelector('header').appendChild(nodoImagen)
+//ya tenemos la img creada, le asignamos el source, ahora tomamos el header, le abrimos un hijo nuevo
+//y dentro le agregamos el nodoImagen
 
 
 
@@ -288,3 +299,23 @@
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+
+// a veces se estila que para indicar que es un elemento de html, y no una variable comun se le pone el signo $ para indicarlo
+const botonIngreso = document.querySelector('#ingresar')
+
+//evento: onclick, es una propiedad que espera una función
+
+botonIngreso.onclick = function() {
+    const edadUsuario = Number(document.querySelector('#edad-usuario').value)
+    let textoResultado = ''
+    if(edadUsuario >= 18){
+        textoResultado = 'Podes Ingresar al Bar'
+    } else {
+        textoResultado = 'No Podes Ingresar al Bar'
+    }
+
+    document.querySelector('#resultado').innerText = textoResultado;
+
+    return false 
+
+}

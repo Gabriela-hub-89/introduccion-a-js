@@ -5,10 +5,14 @@
 // Impriman el resultado en la consola
 function calcularEdad(anioActual, anioNacimiento) {
     return anioActual - anioNacimiento;
-}
+}  //ppio de resposabilidad única, el retorno de la fx se debe encargar de una cosa, por eso no le pongo
+// return 'tenes' + anioActual - anioNacimiento + 'años', para decir eso, me encango por fuera, pero no en la fx
+//por eso se hace en el console.log, me imagino que se podría hacer en otro lado
 
 const anioActual = Number(prompt("Cuál es el año actual?"));
 const anioNacimiento = Number(prompt("En qué año naciste?"));
+
+calcularEdad(anioActual, anioNacimiento)
 
 console.log('Tenés ' + calcularEdad(anioActual, anioNacimiento) + ' años');
 

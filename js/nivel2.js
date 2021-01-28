@@ -43,6 +43,7 @@
 //       cosas que te gustan.
 
 
+const comidasFavoritas = ['milanesas', 'pizza', 'pastel de papa', 'empanadas']
 
 
 
@@ -61,9 +62,11 @@
     console.log(cosasAleatorias.length); // Obtendremos 4.
 */
 
+
 // TAREA: Verifique cuántos valores tiene en su array comidasFavoritas.
 // imprimi utilizando console.log el resultado.
 
+console.log(comidasFavoritas.length)
 
 
 
@@ -91,6 +94,7 @@
 // TAREA: Obtené el tercer elemento de tu array comidasFavoritas e imprimilo utilizando console.log.
 
 
+console.log(comidasFavoritas[2])
 
 
 
@@ -116,13 +120,14 @@
 // con cualquier otra cosa.
 
 
-
+comidasFavoritas[0] = 'hamburguesa'
 
 
 
 // TAREA: console.log todo el array para verificar.
 
 
+console.log(comidasFavoritas)
 
 
 
@@ -146,15 +151,15 @@
 
 // TAREA: Extendamos tu lista de comidasFavoritas y agreguemos un valor más.
 
-
-
+console.log(comidasFavoritas)
+comidasFavoritas.push('milanesas')
 
 
 
 // TAREA: console.log todo el array para verificar.
 
 
-
+console.log(comidasFavoritas)
 
 
 
@@ -181,10 +186,16 @@
 
 // TAREA: Intenta crear un array como una constante y modifica los valores que contiene.
 
+const array = [1, 2, 3]
+console.log(array)
+array[0] = 4       //esto sí se puede hacer
+console.log(array)
+array.push(7)
+console.log(array)
 
-
-
-
+//array = [1,2,3]  // esto me da error porqe no le puedo asignar cosas a un const, esto sería hacer un array distinto
+//y no se puede modificar una constante
+//console.log(array)
 
 
 // TAREA: Observa lo que sucede si agregas algo con.push(), cambias algo
@@ -243,12 +254,21 @@
     }
 */
 
+//  TAREA
+
+let numero = 0
+
+while(numero < 10) {
+    numero ++
+}
+//console.log(numero)
+
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
 //       diez a uno.
-
-
-
-
+let num = 10
+while(num > 1 ) {
+    num--
+}
 
 
 /*
@@ -267,10 +287,33 @@
 */
 
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
+let i;
+for(i = 3; i <= 22; i+= 3) {
+    console.log('el valor de i es ' + i)
+}
 
+// Ejercicio
 
+const notasParciales = [10, 4, 5, 6];
+let totalNotas = 0;        //acumulador donde vamos a ir guardando los result de sumar las notas
+for(let i = 0; i < notasParciales.length; i++) {
+    totalNotas += notasParciales[i]
+}
 
+console.log('tu promedio es ' + totalNotas / notasParciales.length)
 
+// TAREA: hacer una funcion que se llame calcular promedio que tome como parametro un array
+
+let arr = [10, 7, 8, 6]
+function calcularPromedio(){
+    let sumador = 0
+    for(let i = 0; i < arr.length; i++) {
+        sumador += arr[i]
+    }
+    return sumador / arr.length
+}
+
+console.log('tu promedio es ' + calcularPromedio())
 
 
 /*
@@ -296,8 +339,9 @@
 
 // TAREA: Probalo con tu comidasFavoritas array.
 
-
-
+for(let i = 0; i < comidasFavoritas.length; i++) {
+    console.log(comidasFavoritas[i])
+}
 
 
 
@@ -339,7 +383,17 @@
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
-
+for(let i = 1; i <= 50; i++) {
+    if(i % 3 === 0 && i % 5 === 0) {
+        console.log('FizzBuzz')
+    } else if (i % 3 === 0) {
+        console.log('Fizz')
+    } else if(i % 5 === 0) {
+        console.log('Buzz')
+    } else {
+        console.log(i)
+    }
+}
 
 
 

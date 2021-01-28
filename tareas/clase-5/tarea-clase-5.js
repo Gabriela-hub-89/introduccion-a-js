@@ -16,11 +16,41 @@ $botonCalcular.onclick = function()
     return false;
 }
 */
-
+//console.log('clase 5')
 //TAREA: completar tareas/clase-5/index.html para que incluya tarea-clase-5.js
 //TAREA: crear un formulario donde un usuario pueda ingresar su salario anual.
 //cuando el usuario haga click en el botón "calcular", mostrar el salario mensual
 // en una caja de texto deshabilitada. --> <input type="text" disabled id="salario-mensual"/>
+// entonces tiene que haber 2 input y un buttom
+console.log(document.querySelector('title'))
+console.log(document.querySelector('title').textContent)
+
+
+function calcularSalarioMensual(salarioAnual) {
+  return salarioAnual/12
+
+}
+
+//tiene que hacer algo en el momento en que yo apreto el botón calcular, 
+//guardo en en una variable (pregunto por el id(por eso el #))
+const $calcularSalarioMensual = document.querySelector('#calcular-salario-mensual') //tengo que guardar la data que ingreso en el form
+
+
+//la variable de abajo no va fuera de la función, sino estoy tomando el valor vacio
+//para tomar el valor de la info que coloco de salario-anual esta variable la creo dentro de la fx onclick para que quede guardado el valor dentro de la fx 
+//const salarioAnual = document.querySelector('#salario-anual').value // .value porque los input no admiten textContent o innerText
+
+$calcularSalarioMensual.onclick = function() {
+   
+  const salarioAnual = document.querySelector('#salario-anual').value
+  const salarioMensual = calcularSalarioMensual(salarioAnual)
+
+  document.querySelector('#salario-mensual').value = salarioMensual  //agarro el elemento html con id salario mensual y dentro suyo le guardo el resultaado de la variable salario mensual
+
+   //para que el formulario no se reenvie y no se recargue la pagina
+   return false
+}
+
 
 //TAREA: En otro archivo html (no Index) y otro archivo js (no tarea-clase-5.js),
 // creá un formulario que capture el primer nombre, segundo nombre, apellido/s y edad del usuario

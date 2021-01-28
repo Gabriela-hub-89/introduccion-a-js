@@ -20,25 +20,26 @@
     Cuando estás escribiendo código que querés que la máquina ejecute, ponelos AFUERA de los bloques de comentario.
 */
 
-
+//alert('Hola, Mundo!')  //el script es secuencual, por eso primero se ejecuta el alert y después el console
 /*
-    Mostrando texto
-    ===============
+Mostrando texto
+===============
 
-    Empecemos mostrando el resultado de tu código en la pantalla.
+Empecemos mostrando el resultado de tu código en la pantalla.
 
-    Hay algunas maneras de hacerlo, vamos a ver algunas:
+Hay algunas maneras de hacerlo, vamos a ver algunas:
 
-    alert('Hola Mundo!');
-        Esta línea de código va a mostrar un cartelito en tu navegador con el texto 'Hola Mundo!'
-        una vez que se recargue index.html.
+alert('Hola Mundo!');
+Esta línea de código va a mostrar un cartelito en tu navegador con el texto 'Hola Mundo!'
+una vez que se recargue index.html.
 
-    console.log('Hola Mundo!');
-        Esta línea de código va a mostrar 'Hola Mundo!' en la consola del navegador,
-        una vez que  se recargue index.html.
+console.log('Hola Mundo!');
+Esta línea de código va a mostrar 'Hola Mundo!' en la consola del navegador,
+una vez que  se recargue index.html.
 */
 
 // Tarea: Ahora te toca a vos! Acá abajo escribí una alerta que diga "Hola mundo!"
+//console.log('Hola, Mundo!') 
 
 
 // Tarea: Una vez que la alerta funcione, comentala poniendo '//' en la línea donde está el código y guardá los cambios.
@@ -55,7 +56,9 @@
 // Consejo: El atajo del teclado para guardar cambios a un archivo es 'CMD + S' en Mac y 'CTRL + S' en
 //      Windows.
 
-
+// let nombreDeVariable
+// nombreDeVariable = 'Gabriela'
+// console.log(`nombre de variable es ${nombreDeVariable}`)
 /*
     Variables
     =========
@@ -101,6 +104,7 @@
 */
 
 // TAREA: Creá 2 variables indefinidas, llamadas numeroUno y numeroDos.
+
 
 
 /*
@@ -149,10 +153,12 @@
 */
 
 // TAREA: Crear una constante y mostrarla con un alert
+//const miNombre = 'gabriela'
+//alert(miNombre)
 
 
 // TAREA: Intentar asignar un valor a una constante y ver qué pasa (mirar la consola)
-
+//miNombre = 'paula'
 
 // Consejo: No te olvides de comentar (//) los alerts y los errores intencionales (como en la tarea anterior) para
 // que los alerts no aparezcan cada vez, y para que los errores no hagan que el programa se detenga.
@@ -238,17 +244,74 @@
 // Escribí código para que acepte 2 argumentos (numero1 y numero2)
 // Escribí código para que devuelva (return) la suma de numero1 y numero2
 // Ejecutá la función sumar y mostrá su resultado en la consola
+function sumar(numero1, numero2) {
+    return numero1 + numero2
+}
+//console.log(sumar(15, 25))
 
 
 // TAREA: Ahora creemos otra función llamada 'restar'
 //       Que acepte 2 números como parámetro y los reste, y que devuelva ese valor.
 // Ejecutá la función con los números 5 y 1 y mostralos con console.log
+function restar(numero1, numero2) {
+    return numero1 - numero2
+}
+
+//console.log(restar(5, 1))
+
 
 
 // Consejo: Sabías que en vez de pasar los números directamente a tu función podés crear variables con esos números
 // y pasarlos como parámetros? Probalo!
+// function multiplicar() {
+//     return num1 * num2
+// }
+// let num1 = 3
+// let num2 = 2
+// console.log(multiplicar(num1, num2))
 
 // Consejo: Dejá las funciones como están, no las comentes, las vamos a usar de nuevo.
+
+const anioNacimiento = 1989  // aca lo que estoy haciendo es crear variables para usar la funcion restar
+let anioActual = 2020
+let miEdad = restar(anioActual, anioNacimiento) // guardo en un variable la funcion restar con los parametros de anioN y anioActual
+console.log('mi edad es ' + miEdad) // cuando ejecuto esa variable donde guarde esa fx me retorna mi edad
+
+let edadUsuario = prompt('por favor ingrese su edad', '30' )  //el 1er parametro es la preg que vamos a hacer, el 2do es el mensaje por default
+
+
+function saludar(nombre) {    //creo una fx con la variable nombre que retorna un saludo con el nombre
+    return 'Hola! ' + nombre
+}
+let miNombre = prompt('cual es tu nombre? ')  //paso un prompt para preguntar por el nombre y eso me lo guarda en una variable
+console.log(saludar(miNombre))   //ejecuto la fx saludar con la variable miNombre
+
+//crear una funcion que tome como parametro el año actual y el año de nacimiento y calcule la edad del usuario, estas variables tienen 
+//que ser populadas por datos que ingrese el usuario y tiene que imprimirse el resultado en la consola
+
+function calcularEdad(esteAño, nacimientoAño) {
+    return esteAño - nacimientoAño
+}
+
+let añoActual = prompt('ingrese año acual ')
+let añoDeNacimeinto = prompt('ingrese año de nacimiento')
+console.log(calcularEdad(añoActual, añoDeNacimeinto))
+
+
+//preguntar el salario mensual y calcular el salario anual y al revez, calcularlo por día, por hora etc
+const mesesEnElAño = 12
+let salarioAnual = prompt('¿Cuanto ganas al año?')
+function calcularSalarioMensual(salarioAnual, mesesEnElAño) {
+    return salarioAnual / mesesEnElAño
+}
+console.log(calcularSalarioMensual(salarioAnual, mesesEnElAño))
+
+function calcularSalarioAnual(salarioMensual, mesesEnElAño) {
+    return salarioMensual * mesesEnElAño
+}
+let salarioMensual = prompt('¿Cuánto ganas por mes?')
+console.log(calcularSalarioAnual(salarioMensual, mesesEnElAño))
+
 
 /*
     Condicionales If-Else
@@ -328,7 +391,19 @@
 //
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
+const operadorIgual = '/'
+const numUno = 15
+const numDos = 5
 
+if(operadorIgual === '+') {
+    console.log(sumar(numUno, numDos))
+}else if(operadorIgual === '-') {
+    console.log(restar(numUno, numDos))
+}else if (operadorIgual === '/') {
+    console.log(dividir(numUno, numDos))
+}else if(operadorIgual === '*') {
+    console.log(multiplicar(numUno, numDos))
+}
 
 /*
     'If' - 'Else if' - 'Else'
@@ -359,6 +434,13 @@
 */
 
 // TAREA: Creemos 2 funciones más: dividir y multiplicar.
+function dividir(numUno, numDos) {
+    return numUno / numDos
+}
+
+function multiplicar(numUno, numDos) {
+    return numUno * numDos
+}
 
 
 
