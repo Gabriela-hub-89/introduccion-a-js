@@ -54,6 +54,15 @@
     declaración está compuesto de un "selector" y de un conjunto de reglas de estilo
     visuales. Una declaración se ve así:
     
+
+    #titulo {
+        background: red
+    }
+
+    .importante {
+        background: red
+    }
+
     [selector] {
       nombre-de-estilo: valor;
       nombre-de-estilo: valor;
@@ -124,10 +133,17 @@
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
 
+<<<<<<< Updated upstream
 const nuestroTitulo = document.querySelector('h1')
 console.log(nuestroTitulo)
 console.log(nuestroTitulo.innerText)
 nuestroTitulo.innerText = 'Hola, r/Argentina-Programa'
+=======
+    const titutlo = document.querySelector('h1')
+    console.log(titulo)
+
+
+>>>>>>> Stashed changes
 
 
 /*
@@ -148,7 +164,11 @@ nuestroTitulo.innerText = 'Hola, r/Argentina-Programa'
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
 const mediaLinks = document.querySelectorAll('li')
+<<<<<<< Updated upstream
 console.log(mediaLinks)
+=======
+console.log(mediaLinks) //--> es como un array
+>>>>>>> Stashed changes
 
 
 
